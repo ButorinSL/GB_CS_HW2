@@ -1,2 +1,19 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿/*Задача 1: Напишите программу, которая принимает на вход трёхзначное число и на выходе показывает вторую цифру этого числа. Не использовать строки для расчета (решать только при помощи операций % и /).
+
+456 -> 5
+782 -> 8
+918 -> 1
+
+*/
+
+int ReadInt(string message) // int - тип возвращаемого значения, ReadInt - название функции, message - параметр
+{
+Console.Write($"{message} >"); // Вызов функции печати в консоль
+int value = Convert.ToInt32(Console.ReadLine()); // Ввод строки из консоли и преобразование в целое
+return value; // Возвращаемое значение
+}
+
+int number = ReadInt("Введите число"); // Вызов функции ввода числа
+int lastDigitDel = number / 10; // отсечение последней цифры числа
+int secondDigit = lastDigitDel % 10; // определение предпоследней цифры числа
+System.Console.WriteLine($"ПРЕДпоследняя цифра числа {number} равна {secondDigit}"); // Вывод результата
